@@ -28,9 +28,8 @@ RUN mkdir -p /root/Desktop && \
     chmod a+x /root/Desktop/Xastir.desktop
 
 # We reuse this stuff from dorowu/ubuntu-desktop-lxde-vnc so the container starts as it should
-#EXPOSE 80
-#WORKDIR /root
-#ENV HOME=/home/ubuntu SHELL=/bin/bash
-#HEALTHCHECK --interval=30s --timeout=5s CMD curl --fail http://127.0.0.1:6079/api/health
-#ENTRYPOINT ["/startup.sh"]
-# ENTRYPOINT ["/bin/sh"]
+EXPOSE 80
+WORKDIR /root
+ENV HOME=/home/ubuntu SHELL=/bin/bash
+HEALTHCHECK --interval=30s --timeout=5s CMD curl --fail http://127.0.0.1:6079/api/health
+ENTRYPOINT ["/startup.sh"]
